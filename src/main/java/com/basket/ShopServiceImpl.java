@@ -1,34 +1,30 @@
-package com.basket.service;
+package com.basket;
 
 import com.basket.model.Bye;
 import com.basket.repository.BasketRepository;
+import com.basket.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
+@SessionScope
 public class ShopServiceImpl implements ShopService {
 
 
     private List<Bye> userByeList;
     private List<Bye> userCurrentByeList;
 
-    public void ShopServiceImpl() {
+    public ShopServiceImpl() {
         userByeList = new ArrayList<>();
         userCurrentByeList = new ArrayList<>();
     }
 
     @Autowired
     private BasketRepository basketRepository;
-
-    public ShopServiceImpl(List<Bye> userByeList, List<Bye> userCurrentByeList) {
-        this.userByeList = userByeList;
-        this.userCurrentByeList = userCurrentByeList;
-    }
-
-    // public List<Bye> addBye(List<Integer> byeId) {
-    //     userCurrentByeList.clear();
-    //}
 
     @Override
     public List<Bye> addBye(List<Integer> byeId) {

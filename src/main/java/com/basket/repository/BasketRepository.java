@@ -1,10 +1,11 @@
 package com.basket.repository;
 
 import com.basket.model.Bye;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@Repository
 public class BasketRepository {
 
     private final Map<Integer, Bye> byeMap;
@@ -20,5 +21,4 @@ public class BasketRepository {
     public Map<Integer, Bye> getByeMap() {
         return byeMap;
     }
-
 }
