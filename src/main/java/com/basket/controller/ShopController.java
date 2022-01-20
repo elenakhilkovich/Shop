@@ -1,6 +1,5 @@
 package com.basket.controller;
 
-import com.basket.model.Bye;
 import com.basket.service.ShopService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,14 +19,12 @@ public class ShopController {
     }
 
     @GetMapping("/add")
-    public List<Bye> addBye(@RequestParam List<Integer> byeId) {
-        return shopService.addBye(byeId);
+    public List<Integer> addBarcodes(@RequestParam List<Integer> newBarcodes) {
+        return shopService.addBarcodes(newBarcodes);
     }
 
     @GetMapping("/get")
-    public List<Bye> getShop() {
-        return shopService.getShop();
+    public List<Integer> getBarcodes() {
+        return shopService.getBarcodes();
     }
-
-
 }
